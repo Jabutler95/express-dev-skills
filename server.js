@@ -17,6 +17,8 @@ const app = express()
 // view engine setup
 app.set('view engine', 'ejs')
 
+
+
 // basic middleware
 app.use(logger('dev'))
 app.use(express.json())
@@ -26,6 +28,11 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+app.use(function(req, res, next) {
+  console.log('Hello!')
+  req.time = new Date().toLocaleTimeString()
+  next()
+})
 
 // mount imported routes
 app.use('/', indexRouter)
