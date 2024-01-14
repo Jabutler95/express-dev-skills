@@ -30,7 +30,6 @@ app.use(
   )
 )
 app.use(function(req, res, next) {
-  console.log('Hello!')
   req.time = new Date().toLocaleTimeString()
   next()
 })
