@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills</title>
+</head>
+<body>
+  <h1>Edit Skill # <%= skill._id %></h1>
+  <form action="/skills/<%= skill._id %>?_method=PUT" method="POST" autocomplete="off">
+  <input value="<%= skill.text %>" type="text" name="text">
+  <input type="checkbox" <%= skill.completed ? 'checked' : '' %> name="completed">
+  <button type="submit">Save Skill</button>
+  </form>
+  <a href="/skills">Back to Skills</a>
+</body>
+</html>
